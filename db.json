@@ -1,4 +1,5 @@
-[
+{
+  "product" :[
   {
     "name": "Modern Coffee Table",
     "price": 199.99,
@@ -34,4 +35,9 @@
     "rating": 4.8,
     "image": "https://example.com/furniture5.jpg"
   }
-]
+],
+ "profile": {
+    "name": "akashyadav"
+  }
+}
+
