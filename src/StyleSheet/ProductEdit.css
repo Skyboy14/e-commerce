@@ -1,0 +1,20 @@
+.covermain{
+    background-color: wheat;
+    margin: 130px auto;
+    width: max-content;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.unitCover{
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    padding: 5px;
+}
+
+.imgstyle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}

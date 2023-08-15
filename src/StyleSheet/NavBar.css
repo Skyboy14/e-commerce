@@ -1,0 +1,40 @@
+/* Navbar.css */
+
+.navbar {
+  background-color: #333;
+  padding: 10px;
+}
+
+.navbar-nav {
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+  padding: 2px 12px;
+}
+
+.navbar-nav > li{
+  padding: 3px;
+  font-size: x-large;
+  color: azure;
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+.nav-item {
+  margin: 0 10px;
+}
+
+.nav-link {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.nav-link:hover,
+.active {
+  color: #ffd700; 
+}
