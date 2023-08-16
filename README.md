@@ -3,7 +3,7 @@ The app is created in React JS with the following lib :
 "gh-pages", "react-dom", "react-redux", "react-scripts", "react-toastify", "redux", "redux-thunk".
 
 ## to start the application in local
-1. Clone the app local: git clone https://github.com/Skyboy14/e-commerce.git
+1. Clone the app local setup: git clone https://github.com/Skyboy14/e-commerce.git
 2. install required packages: npm install
 3. start the application:  npm start
 
@@ -23,7 +23,7 @@ The app is created in React JS with the following lib :
 4. Sort the list base on price.
 
    
-##Folder Structure
+## Folder Structure
 
 ```
 E-COMMERCE/
