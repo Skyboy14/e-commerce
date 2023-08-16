@@ -1,4 +1,4 @@
-import { FETCH_PRODUCTS, UPDATE_PRODUCT, DELETE_PRODUCT, ADD_PRODUCT } from './Type';
+import { FETCH_PRODUCTS, UPDATE_PRODUCT, DELETE_PRODUCT, ADD_PRODUCT, SORT_PRODUCT } from './Type';
 
 const url = `https://my-json-server.typicode.com/Skyboy14/e-commerce/product`
 
@@ -12,6 +12,13 @@ export const fetchProducts = () => dispatch => {
                 payload: data,
             })
         );
+};
+
+export const sortProducts = (products) => dispatch => {
+    dispatch({
+        type: SORT_PRODUCT,
+        payload: products,
+    });
 };
 
 export const deleteProduct = (productId) => dispatch => {

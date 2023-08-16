@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import Modal from '@mui/material/Modal';
-import { fetchProducts, deleteProduct } from '../Redux/Action/Product';
+import { fetchProducts, deleteProduct, sortProducts } from '../Redux/Action/Product';
 
 import '../StyleSheet/ProductList.css'
 import ProductEdit from './ProductEdit';
+import { toast } from 'react-toastify';
 
-const ProductList = ({ products, fetchProducts, deleteProduct, updateProduct }) => {
+const ProductList = ({ products, fetchProducts, deleteProduct, setProductsLen, sortProducts  }) => {
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
@@ -21,11 +22,18 @@ const ProductList = ({ products, fetchProducts, deleteProduct, updateProduct }) 
         handleOpen()
     }
 
-    console.log('!!!!',products)
+
+    // set in cart item count
+    setProductsLen(products.length)
 
     return (
         <div className='mainCover'>
-            <h1>Product List</h1>
+            <div className='sortButton'>
+                <h1>Product List</h1>
+                <button onClick={() => {sortProducts(products); toast.success('Product Sorted successfully')}}>
+                    Sort by price
+                </button>
+            </div>
             <div>
                 <ul style={{listStyleType: 'none'}}>
                     {products.map(product => (
@@ -47,7 +55,7 @@ const ProductList = ({ products, fetchProducts, deleteProduct, updateProduct }) 
                                         <button onClick={()=>handleEdit(product)}>
                                             Edit
                                         </button>
-                                        <button onClick={()=>deleteProduct(product.id)}>
+                                        <button onClick={() => { deleteProduct(product.id); toast.success('Product deleted successfully'); }}>
                                             Remove
                                         </button>
                                     </div>
@@ -70,7 +78,7 @@ const ProductList = ({ products, fetchProducts, deleteProduct, updateProduct }) 
 };
 
 const mapStateToProps = state => ({
-    products: state.products.products,
+    products: state.products.products, 
 });
 
-export default connect(mapStateToProps, { fetchProducts, deleteProduct })(ProductList);
+export default connect(mapStateToProps, { fetchProducts, deleteProduct, sortProducts })(ProductList);

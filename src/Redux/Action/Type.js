@@ -10,3 +10,6 @@ export const DELETE_PRODUCT = 'DELETE_PRODUCT';
 
 // Add product action
 export const ADD_PRODUCT = 'ADD_PRODUCT';
+
+// Add sort action
+export const SORT_PRODUCT = 'SORT_PRODUCT';

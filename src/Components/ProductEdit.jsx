@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { updateProduct } from '../Redux/Action/Product';
 
 import '../StyleSheet/ProductEdit.css'
+import { toast } from 'react-toastify';
 
 const ProductEdit = ({ product, updateProduct, handleClose }) => {
 
@@ -11,16 +12,22 @@ const ProductEdit = ({ product, updateProduct, handleClose }) => {
     const [updatedRating, setUpdatedRating] = useState(product.rating);
     const [updatedDescription, setUpdatedDescription] = useState(product.description);
 
-    const handleUpdate = () => {
-    const updatedProduct = {
-      ...product,
-      name: updatedName,
-      price: updatedPrice,
-      rating: updatedRating,
-      description: updatedDescription,
-    };
-    updateProduct(product.id, updatedProduct);
-    handleClose(true)
+  const handleUpdate = () => {
+      
+    if (updatedName === '' || updatedPrice === '' || updatedRating === '' || updatedDescription === '') {
+      toast.error('Please add all fields')
+    } else {
+      const updatedProduct = {
+        ...product,
+        name: updatedName,
+        price: updatedPrice,
+        rating: updatedRating,
+        description: updatedDescription,
+      };
+      updateProduct(product.id, updatedProduct);
+      handleClose(true)
+      toast.success('Product Edited successfully')
+    }
   };
 
   return (

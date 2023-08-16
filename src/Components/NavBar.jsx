@@ -3,7 +3,7 @@ import '../StyleSheet/NavBar.css'; // Import your CSS file for styling
 import { Modal } from '@mui/material';
 import ProductAdd from './ProductAdd';
 
-const Navbar = () => {
+const Navbar = ({productsLen}) => {
 
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -13,18 +13,18 @@ const Navbar = () => {
     <>
     <nav className="navbar">
       <ul className="navbar-nav">
-        <li>
+        <li style={{color: 'aqua'}}>
             E-Commerce
         </li>
-        <li >
-            Products{ }
+        <li style={{display:'flex'}} >
+            Products Incart : <div className='ProductCount'>{productsLen}</div>
         </li>
         <li >
-          <button className="nav-link" onClick={handleOpen}>
-            Add Product
+          <button style={{fontSize: 'inherit'}} className="nav-link" onClick={handleOpen}>
+            Add Product +
           </button>
         </li>
-        <li style={{marginLeft: '800px'}}>
+        <li style={{marginLeft: '620px'}}>
           Hello Akash
         </li>
       </ul>

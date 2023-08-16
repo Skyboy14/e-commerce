@@ -38,3 +38,10 @@
 .active {
   color: #ffd700; 
 }
+
+.ProductCount{
+    background-color: red;
+    padding: 0 10px;
+    border-radius: 50%;
+    margin-left: 5px;
+}

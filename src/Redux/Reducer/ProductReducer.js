@@ -1,7 +1,8 @@
-import { FETCH_PRODUCTS, DELETE_PRODUCT, UPDATE_PRODUCT, ADD_PRODUCT } from '../Action/Type';
+import { FETCH_PRODUCTS, DELETE_PRODUCT, UPDATE_PRODUCT, ADD_PRODUCT, SORT_PRODUCT } from '../Action/Type';
 
 const initialState = {
     products: [],
+    // sortedAscending: false,
 };
 
 const productReducer = (state = initialState, action) => {
@@ -27,6 +28,11 @@ const productReducer = (state = initialState, action) => {
             return {
                 ...state,
                 products: [...state.products, action.payload],
+            };
+        case SORT_PRODUCT:
+            return {
+                ...state,
+                products: action.payload.slice().sort((a, b) => a.price - b.price),
             };
         default:
             return state;
