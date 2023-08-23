@@ -2,6 +2,8 @@
 The app is created in React JS with the following lib : 
 "gh-pages", "react-dom", "react-redux", "react-scripts", "react-toastify", "redux", "redux-thunk".
 
+## hosted :: https://skyboy14.github.io/e-commerce/
+
 ## to start the application in local
 1. Clone the app local setup: git clone https://github.com/Skyboy14/e-commerce.git
 2. install required packages: npm install
